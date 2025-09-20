@@ -192,6 +192,7 @@ def buscar():
             resumo_web, link_web = pesquisar_na_web_externa(termo)
             texto_resultado.insert(END, resumo_web)
             if link_web:
+                # Novo: Adiciona a frase antes do link da web
                 texto_resultado.insert(END, "clique no link e leia mais sobre o assunto\n\n")
                 link_label = tk.Label(texto_resultado, text=f"Acessar: {link_web}", fg="blue", cursor="hand2")
                 link_label.bind("<Button-1>", lambda e: webbrowser.open(link_web))
@@ -199,6 +200,7 @@ def buscar():
         else:
             texto_resultado.insert(END, resumo)
             if link:
+                # Novo: Adiciona a frase antes do link da Wikipedia
                 texto_resultado.insert(END, f"\n\nclique no link e leia mais sobre o assunto\n\n")
                 link_label = tk.Label(texto_resultado, text=link, fg="blue", cursor="hand2")
                 link_label.bind("<Button-1>", lambda e: webbrowser.open(link))
