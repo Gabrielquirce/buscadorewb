@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisa de Artigos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Pesquisa de Artigos</h1>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Digite seu termo de pesquisa...">
+            <button id="searchButton">Pesquisar</button>
+        </div>
+
+        <div class="options">
+            <span id="currentSource">Fonte: Wikipedia</span>
+            <button id="toggleSource">Trocar para Web</button>
+        </div>
+
+        <div id="results">
+            </div>
+    </div>
+
+    <div class="options">
+        <label>Limitar por:</label>
+        <input type="radio" name="type" value="resumo" checked> Resumo
+        <input type="radio" name="type" value="tudo"> Tudo
+    </div>
+
+    <div class="options">
+        <label>Limitar por:</label>
+        <input type="radio" name="type" value="resumo" checked> Resumo
+        <input type="radio" name="type" value="tudo"> Tudo
+        
+        <label for="searchSource">Fonte:</label>
+        <select id="searchSource">
+            <option value="wikipedia">Wikipedia</option>
+            <option value="web">Web Geral</option>
+            <option value="g1.globo.com">G1</option>
+            <option value="lupa.uol.com.br">Lupa</option>
+            <option value="firstdraftnews.org">First Draft News</option>
+        </select>
+    </div>
+    
+    <div id="results">
+        </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

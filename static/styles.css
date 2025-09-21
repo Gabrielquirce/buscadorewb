@@ -1,0 +1,79 @@
+/* Defina a altura mínima do corpo para garantir que o contêiner principal se expanda */
+body {
+    font-family: sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh; /* Garante que o corpo ocupa toda a altura da viewport */
+}
+
+/* O contêiner principal agora tem um layout flexbox para organizar as seções */
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column; /* Organiza os filhos em uma coluna */
+    min-height: calc(100vh - 40px); /* Ajuste para preencher a tela */
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* A nova classe para agrupar as opções e a barra de busca */
+.header-controls {
+    position: sticky; /* ou position: fixed */
+    top: 0;
+    background: white; /* Adicione um fundo para evitar transparência */
+    padding-bottom: 20px;
+    z-index: 100; /* Garante que os controles fiquem na frente de outros elementos */
+}
+
+.search-box {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#searchInput {
+    flex-grow: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+}
+
+#searchButton {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 0 4px 4px 0;
+}
+
+.options {
+    margin-bottom: 20px;
+}
+
+/* A área de resultados ocupará o espaço restante */
+#results {
+    flex-grow: 1; /* Faz a área de resultados expandir */
+    overflow-y: auto; /* Adiciona uma barra de rolagem se o conteúdo for muito longo */
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.result-link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.result-link:hover {
+    text-decoration: underline;
+}
